@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lalakon Juru Biantara</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;800&family=Nunito:wght@400;700&display=swap">
+<style>
+:root{--bg:#e6edf0;--card:#fff;--ink:#14263a;--mute:#4d6075;--line:#c4d1d9;--gold:#9a6a00;--goldbg:#f5d98a;--ok:#1f7a53;--bad:#b3392f;--btn:#14263a;--btnt:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1b2b;--card:#172a40;--ink:#e8eef2;--mute:#9fb2c3;--line:#2c4560;--gold:#f0bf4a;--goldbg:#4a3a10;--ok:#5cc596;--bad:#ff8b7e;--btn:#f0bf4a;--btnt:#14263a}}
+:root[data-theme="dark"]{--bg:#0e1b2b;--card:#172a40;--ink:#e8eef2;--mute:#9fb2c3;--line:#2c4560;--gold:#f0bf4a;--goldbg:#4a3a10;--ok:#5cc596;--bad:#ff8b7e;--btn:#f0bf4a;--btnt:#14263a}
+*{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Nunito,system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+h1,h2{font-family:Alegreya,Georgia,serif;line-height:1.2;margin:.2em 0 .4em}
+h1{font-size:2.2rem;font-weight:800}h2{font-size:1.4rem;font-weight:800}
+.sub{color:var(--mute);margin:0 0 8px}
+.hud{display:flex;gap:18px;flex-wrap:wrap;font-weight:700;margin:12px 0}
+.trail{list-style:none;display:flex;padding:0;margin:14px 0;overflow-x:auto}
+.trail li{flex:1;min-width:116px;text-align:center;padding:10px 6px;border-top:4px solid var(--line);font-size:.85rem;color:var(--mute)}
+.trail li.c{border-color:var(--gold);color:var(--ink);font-weight:700}
+.trail li.d{border-color:var(--ok);color:var(--ok)}
+.trail span{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.meta{color:var(--mute);font-size:.88rem}
+.opt,.row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 12px;border:1px solid var(--line);border-radius:8px;margin:8px 0}
+.opt{justify-content:flex-start;cursor:pointer}
+button{font:inherit;font-weight:700;border:0;border-radius:8px;padding:10px 18px;background:var(--btn);color:var(--btnt);cursor:pointer;margin-top:14px}
+button:focus-visible,input:focus-visible,select:focus-visible,.chip:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+button:disabled{opacity:.4;cursor:default}
+.row button{margin:0 2px;padding:4px 10px}
+select,textarea{font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px;max-width:55%}
+textarea{width:100%;max-width:100%;min-height:90px}
+.chip{display:inline-block;padding:6px 12px;margin:4px;border:1px solid var(--line);border-radius:999px;background:var(--bg);cursor:grab;font-size:.92rem}
+.chip.on{border-color:var(--gold);background:var(--goldbg);color:var(--ink)}
+.pool{min-height:52px;padding:6px;border:1px dashed var(--line);border-radius:8px;margin-bottom:10px}
+.bx{min-height:70px;padding:8px;border:2px solid var(--line);border-radius:8px;margin:8px 0}
+.fb{margin-top:14px;padding:12px;border-left:5px solid;border-radius:6px;background:var(--bg)}
+.fb.ok{border-color:var(--ok)}.fb.part{border-color:var(--gold)}.fb.bad{border-color:var(--bad)}
+blockquote{margin:10px 0;padding:10px 14px;border-left:4px solid var(--gold);background:var(--bg);font-style:italic}
+details{margin-top:18px}summary{cursor:pointer;font-weight:700}
+@media(prefers-reduced-motion:no-preference){.card{animation:in .25s ease-out}@keyframes in{from{opacity:.4}to{opacity:1}}}
+</style></head><body><main>
+<h1>Lalakon Juru Biantara</h1>
+<p class="sub">Jalan ka Panggung Agung. Gim edukasi Basa Sunda, materi biantara, kelas X.</p>
+<div id="app"></div>
+</main>
+<script>
+const $=s=>document.querySelector(s),Q=s=>[...document.querySelectorAll(s)],sh=a=>[...a].sort(()=>Math.random()-.5);
+const Z=[
+{n:"Lembah Sampurasun",ic:"🌄",rw:"Sampurasun",pass:18,key:0,card:0,tip:"Baca deui: biantara nyaéta nyarita di hareupeun balaréa; cirina eusi écés, basa merenah, lentong jelas.",items:[
+{t:"mc",p:10,q:"Biantara téh nyaéta...",o:["Nulis carita pondok pikeun dibaca ku sorangan","Nyarita di hareupeun balaréa pikeun ngedalkeun maksud atawa pamanggih","Ngobrol santai jeung babaturan sakelas","Maca dongéng ka murid SD"],a:1},
+{t:"mk",p:15,q:"Pilih 3 jawaban nu bener! Ciri biantara nu hadé nyaéta...",o:["Maké basa nu merenah jeung sopan","Eusina écés jeung runtuy","Lentong jeung lafalna jelas","Nyarita gancang pisan sangkan gancang réngsé","Teu merhatikeun hadirin"],a:[0,1,2]}]},
+{n:"Leuweung Tilu Bagian",ic:"🌲",rw:"Tilu Bagian",pass:18,key:1,card:0,tip:"Struktur biantara: bubuka (salam, panghormatan, syukur), eusi (inti bahasan), panutup (kacindekan, pangampura, salam).",items:[
+{t:"tf",p:12,q:"Tangtukeun unggal pernyataan: Bener atawa Salah?",r:[["Bubuka biantara ilaharna ngawengku salam, panghormatan, jeung rasa sukur.",1],["Eusi biantara kaasup bagian bubuka.",0],["Panutup biantara bisa ngandung kacindekan, pangampura, jeung salam panutup.",1],["Biantara nu hadé kudu dimimitian ku eusi utama tanpa salam.",0]]},
+{t:"dd",p:13,q:"Seret (atawa pilih tuluy ketok kotak) unggal kalimat ka bagian nu bener.",bx:["Bubuka","Eusi","Panutup"],it:[["Assalamu’alaikum Wr. Wb., Sampurasun.",0],["Puji sinareng syukur urang sanggakeun ka Gusti Nu Maha Suci.",0],["Hadirin anu sim kuring hormat...",0],["Basa Sunda mangrupa warisan budaya nu kudu dijaga ku urang sadaya.",1],["Sababaraha cara ngajaga basa Sunda nya éta dipaké di lembur, di sakola, jeung di média sosial.",1],["Mugia biantara ieu aya mangpaatna.",2],["Kurang langkung sim kuring neda dihapunten.",2],["Hatur nuhun. Wassalamu’alaikum Wr. Wb.",2]]}]},
+{n:"Sagara Basa",ic:"🌊",rw:"Basa Lemes",pass:14,key:0,card:1,tip:"Undak usuk basa: pakéna kecap lemes keur batur (tuang, angkat, rawuh, nyerat). Metode biantara: téks, hapalan, impromptu, ékstémporan.",items:[
+{t:"mt",p:8,q:"Jodohkeun kecap loma jeung kecap lemes keur batur.",pr:[["dahar","tuang"],["indit","angkat"],["datang","rawuh"],["nulis","nyerat"]]},
+{t:"mt",p:6,q:"Jodohkeun metode biantara jeung cirina.",pr:[["Maca téks","Maca naskah nu geus disusun lengkep"],["Ngapalkeun","Naskah dihapalkeun heula, tuluy diucapkeun tanpa maca"],["Impromptu","Nyarita langsung tanpa persiapan"],["Ékstémporan","Nyusun kerangka pondok heula, tuluy dimekarkeun waktu nyarita"]]},
+{t:"od",p:6,q:"Urutkeun tahap nyiapkeun biantara ti mimiti nepi ka tampil.",o:["Nangtukeun téma","Ngumpulkeun bahan","Nyusun kerangka","Latihan","Tampil di panggung"]}]},
+{n:"Gunung Panggung Agung",ic:"🏔️",rw:"Makuta Juru Biantara",pass:21,key:0,card:0,tip:"",
+intro:`<p class=meta>Boss Battle: Sang Penjaga Segel. Analisis téks ieu.</p><blockquote>“Barudak, dinten ieu abdi bade ngobrol ngeunaan lomba biantara. Kuring mah geus nyiapkeun naskah, tapi poho dibawa. Pokona mah sing milu. Hatur nuhun.”</blockquote>`,items:[
+{t:"op",p:10,q:"A. Analisis: Temukeun minimal 3 kekurangan téks ieu (struktur, pilihan basa, kalengkepan eusi).",hk:"Pariksa tilu hal: struktur, undak usuk basa, jeung kalengkepan eusi.",h:"Tingali bagian bubuka jeung panutupna, tuluy bandingkeun kecap abdi/bade jeung kuring/geus.",k:"(1) Teu aya salam pangbubuka, panghormatan, jeung rasa sukur. (2) Undak usuk basa teu konsisten: abdi/bade (lemes) dicampur kuring/geus/ngobrol (loma). (3) Eusi teu écés jeung teu runtuy; panutup teu lengkep (teu aya kacindekan, pangampura, salam panutup). Jawaban logis séjén ditarima."},
+{t:"op",p:12,q:"B. Revisi: Tulis ulang bagian bubuka (3 nepi ka 4 kalimat) sangkan luyu jeung kaidah biantara.",h:"Susun: salam, syukur, panghormatan, tuluy bubuka topik. Paké basa lemes.",k:"Conto: “Assalamu’alaikum Warahmatullahi Wabarakatuh. Sampurasun. Puji sinareng syukur urang sanggakeun ka Gusti Nu Maha Suci, margi kalayan rahmat-Na urang sadaya tiasa riung mungpulung dina acara ieu. Kana kahormatan Bapa/Ibu guru sareng hadirin anu sim kuring hormat. Dina kasempetan ieu, sim kuring bade ngawartosan ngeunaan Pasanggiri Biantara.” Rubrik: ada salam, syukur, panghormatan, basa lemes konsisten."},
+{t:"op",p:8,q:"C. Evaluasi: Anjeun ditunjuk dadakan pikeun biantara dina acara pisah sambut. Metode naon nu paling merenah? Jelaskeun alesanana.",h:"Mikirkeun waktu persiapan nu aya.",k:"Impromptu, sabab teu aya waktu nyiapkeun. Ékstémporan ogé ditarima lamun siswa ngajelaskeun yén manéhna sempet nyusun kerangka pondok."}]}];
+const R={
+mc:it=>it.o.map((x,i)=>`<label class=opt><input type=radio name=r value=${i}>${x}</label>`).join(""),
+mk:it=>it.o.map((x,i)=>`<label class=opt><input type=checkbox value=${i}>${x}</label>`).join(""),
+tf:it=>it.r.map(([s],i)=>`<div class=row><span>${s}</span><span><label><input type=radio name=t${i} value=1> Bener</label> <label><input type=radio name=t${i} value=0> Salah</label></span></div>`).join(""),
+mt:it=>it.pr.map(([l],i)=>`<div class=row><b>${l}</b><select id=m${i} aria-label="${l}"><option value="">Pilih…</option>${it.rs.map(r=>`<option>${r}</option>`).join("")}</select></div>`).join(""),
+od:it=>it.ar.map((k,j)=>`<div class=row><span>${it.o[k]}</span><span><button onclick=mv(${j},-1) aria-label="Naék">↑</button><button onclick=mv(${j},1) aria-label="Turun">↓</button></span></div>`).join(""),
+dd:()=>"",op:()=>`<textarea aria-label="Jawaban"></textarea>`};
+let S,cur,done,sel=null;
+function home(){$("#app").innerHTML=`<div class=card><h2>Carita</h2><p>Pasanggiri Biantara Tatar Sunda geus deukeut, tapi Panggung Agung dikonci ku segel <i>Sora Karuhun</i>. Ngan juru biantara nu nguasaan salam, susunan, basa, jeung lentong nu bisa muka. Pasukan anjeun kudu meuntas opat zona.</p><p>Aturan: unggal zona kudu lulus 70%. Gagal, nyawa (3 ❤️) ngurangan jeung zona diulang. Total 100 poin.</p><button onclick=start()>Mimitian</button></div>
+<details><summary>Panduan guru</summary><p>Durasi 90 menit: pembukaan 10, Zona 1 15, Zona 2 20, Zona 3 20, Boss 20, refleksi 5. Mainkan per kelompok 4–5 siswa dengan satu perangkat. Pemenang ditentukan dari total poin dan lencana, bukan kecepatan. Skor soal Boss diisi guru atau tim setelah membaca kunci. Kunci Segel (dari Zona 2) membuka petunjuk di soal A; Kartu Bantuan (dari Zona 3) bisa dipakai sekali di Boss Battle.</p></details>`}
+function start(){S={z:0,tot:0,lives:3,b:[],key:0,card:0};zone()}
+function zone(){S.pts=0;S.i=0;item()}
+function view(h){$("#app").innerHTML=`<ul class=trail>${Z.map((z,i)=>`<li class="${S.b.length>i?"d":i==S.z?"c":""}">${z.ic}<span>${z.n}</span></li>`).join("")}</ul><div class=hud><span>❤️ ${S.lives}</span><span>Poin: ${Math.round(S.tot)}</span><span>🏅 ${S.b.length}</span>${S.key?"<span>🗝️ Kunci Segel</span>":""}${S.card?"<span>🃏 Kartu Bantuan</span>":""}</div>`+h;scrollTo(0,0)}
+function item(){const z=Z[S.z],it=cur=z.items[S.i];done=false;sel=null;
+if(it.t=="dd")it.pl={};
+if(it.t=="od")it.ar=sh(it.o.map((_,i)=>i));
+if(it.t=="mt")it.rs=sh(it.pr.map(p=>p[1]));
+view(`<div class=card><div class=meta>${z.n}: soal ${S.i+1} ti ${z.items.length}, ${it.p} poin</div>${z.intro||""}<h2>${it.q}</h2>${S.key&&it.hk?`<p class=meta>🗝️ ${it.hk}</p>`:""}<div id=body>${R[it.t](it)}</div><div id=fb></div><button id=go onclick=check()>Periksa</button>${S.card&&z.intro?` <button id=cd onclick=useCard()>Pakai Kartu Bantuan</button>`:""}</div>`);
+if(it.t=="dd")dd()}
+function chip(i){return `<span class="chip${sel===i?" on":""}" tabindex=0 role=button draggable=true ondragstart="event.dataTransfer.setData('text',${i})" onclick="pick(event,${i})" onkeydown="if(event.key=='Enter')pick(event,${i})">${cur.it[i][0]}</span>`}
+function dd(){const it=cur;$("#body").innerHTML=`<div class=pool ondragover=event.preventDefault() ondrop=put(event,-1)>${it.it.map((x,i)=>it.pl[i]==null?chip(i):"").join("")||"<i>Sakabéh geus dipasang</i>"}</div>${it.bx.map((b,j)=>`<div class=bx ondragover=event.preventDefault() ondrop=put(event,${j}) onclick=put(null,${j})><b>${b}</b><br>${it.it.map((x,i)=>it.pl[i]===j?chip(i):"").join("")}</div>`).join("")}`}
+function pick(e,i){e.stopPropagation();if(done)return;if(cur.pl[i]!=null){delete cur.pl[i];sel=null}else sel=sel===i?null:i;dd()}
+function put(e,j){if(done)return;let i=sel;if(e){e.preventDefault();i=+e.dataTransfer.getData("text")}if(i==null)return;if(j<0)delete cur.pl[i];else cur.pl[i]=j;sel=null;dd()}
+function mv(j,d){const a=cur.ar,k=j+d;if(done||k<0||k>=a.length)return;[a[j],a[k]]=[a[k],a[j]];$("#body").innerHTML=R.od(cur)}
+function check(){if(done)return next();const it=cur;let s=0,k="";
+if(it.t=="op"){$("#fb").innerHTML=`<div class="fb part"><b>Kunci / conto jawaban:</b> ${it.k}<br><br><label>Skor (diisi ku guru atawa tim): <input type=range id=sc min=0 max=${it.p} value=0 oninput="$('#sv').textContent=this.value"> <b id=sv>0</b> ti ${it.p}</label></div>`;$("#body textarea").disabled=true;done=true;$("#go").textContent="Lanjut";return}
+if(it.t=="mc"){const c=$("#body input:checked");s=c&&+c.value==it.a?it.p:0;k="Kunci: "+it.o[it.a]}
+if(it.t=="mk"){const v=Q("#body input:checked").map(x=>+x.value),r=v.filter(x=>it.a.includes(x)).length,w=v.length-r;s=w?0:r==it.a.length?it.p:r==it.a.length-1?5:0;k="Kunci: "+it.a.map(i=>it.o[i]).join("; ")}
+if(it.t=="tf"){it.r.forEach(([,v],i)=>{const c=$(`#body input[name=t${i}]:checked`);if(c&&+c.value==v)s+=it.p/it.r.length});k="Kunci: "+it.r.map((r,i)=>`${i+1} ${r[1]?"Bener":"Salah"}`).join(", ")}
+if(it.t=="mt"){it.pr.forEach(([,r],i)=>{if($("#m"+i).value==r)s+=it.p/it.pr.length});k="Kunci: "+it.pr.map(p=>p.join(" → ")).join("; ")}
+if(it.t=="od"){s=it.p*it.ar.filter((k,j)=>k==j).length/it.o.length;k="Urutan bener: "+it.o.join(" → ")}
+if(it.t=="dd"){s=it.p*it.it.filter(([,b],i)=>it.pl[i]===b).length/it.it.length;const w=it.it.filter(([,b],i)=>it.pl[i]!==b).map(([x,b])=>`“${x}” → ${it.bx[b]}`).join("; ");k=w?"Nu kudu dibenerkeun: "+w:"Sakabéh pas!"}
+s=Math.round(s*10)/10;it.s=s;done=true;
+$("#fb").innerHTML=`<div class="fb ${s==it.p?"ok":s>0?"part":"bad"}"><b>${s==it.p?"Bener!":s>0?"Sawaréh bener.":"Acan pas."} ${s} ti ${it.p} poin.</b><br>${k}</div>`;
+$("#go").textContent="Lanjut";Q("#body input,#body select,#body button").forEach(x=>x.disabled=true)}
+function useCard(){S.card=0;$("#fb").insertAdjacentHTML("afterbegin",`<div class="fb part">🃏 ${cur.h}</div>`);$("#cd").remove()}
+function next(){S.pts+=cur.t=="op"?+$("#sc").value:cur.s;S.i++;S.i<Z[S.z].items.length?item():endZone()}
+function endZone(){const z=Z[S.z],p=Math.round(S.pts);
+if(S.pts>=z.pass-.01){S.tot+=S.pts;S.b.push(z.rw);if(z.key)S.key=1;if(z.card)S.card=1;
+if(S.z==3)return view(`<div class=card><h2>👑 Makuta Juru Biantara!</h2><p>Segel Sora Karuhun kabuka. Total poin: <b>${Math.round(S.tot)} ti 100</b>.</p><p>Lencana: ${S.b.map(b=>"🏅 "+b).join(", ")}</p><p>Refleksi: bagian mana nu paling hésé pikeun pasukan anjeun?</p><button onclick=start()>Main deui</button></div>`);
+view(`<div class=card><h2>Zona lulus!</h2><p>Poin zona: ${p} (minimal ${z.pass}). Anjeun meunang 🏅 <b>${z.rw}</b>${z.key?" jeung 🗝️ Kunci Segel":""}${z.card?" jeung 🃏 Kartu Bantuan":""}.</p><button onclick="S.z++;zone()">Lanjut ka ${Z[S.z+1].n}</button></div>`)}
+else{S.lives--;view(S.lives?`<div class=card><h2>Acan lulus</h2><p>Poin zona: ${p}, minimal ${z.pass}. Nyawa ngurangan jadi ${S.lives}.</p><p><b>Pos Latihan:</b> ${z.tip||"Baca deui kunci jawaban tadi, tuluy cobaan deui."}</p><button onclick=zone()>Ulang zona</button></div>`:`<div class=card><h2>Nyawa béak</h2><p>Pasukan kudu mimiti ti awal deui.</p><button onclick=start()>Main deui</button></div>`)}}
+home();
+</script></body></html>
